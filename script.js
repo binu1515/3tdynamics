@@ -107,3 +107,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.staticforms.xyz/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        if (response.ok) {
+          window.location.href = "thank-you.html";
+        } else {
+          alert("Submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("There was an error submitting the form.");
+      }
+    });
