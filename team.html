@@ -8,19 +8,185 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="team-styles.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Team Member Circular Image Styles */
+        .team-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-member-image-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+
+        .team-card:hover .team-member-image-container {
+            border-color: #007bff;
+        }
+
+        .team-member-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .team-member-initials {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .team-member-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .team-member-role {
+            font-size: 16px;
+            color: #007bff;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-member-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .team-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .heading-primary {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .team-member-image-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .team-member-initials {
+                font-size: 28px;
+            }
+            
+            .heading-primary {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container-custom">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="logo.jpeg" alt="3T Dynamics Logo">
-                    <span class="logo-text">3T Dynamics</span>
-                </div>
-                
+    <!-- Header -->
+<header class="header">
+  <div class="container-custom">
+    <div class="header-content">
+    <div class="logo">
+     <a href="index.html#home">
+       <img src="logo.jpeg" alt="3T Dynamics Logo">
+       <span class="logo-text">3T Dynamics</span>
+     </a>
+   </div>
+
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -68,103 +234,51 @@
                 <div class="team-grid">
                     <!-- Team Member 1 -->
                     <div class="team-card">
-                        <div class="team-member-image">
-                            JD
+                        <div class="team-member-image-container">
+                            <img src="./Our-Projects/vishnu.jpg" alt="Binu Raj E" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="team-member-initials" style="display: none;">BR</div>
+
                         </div>
-                        <h3 class="team-member-name">John Doe</h3>
-                        <p class="team-member-role">CEO & Founder</p>
+                        <h3 class="team-member-name">Vishnu Arun</h3>
+                        <p class="team-member-role">Digital Marketing Specialist</p>
                         <p class="team-member-description">
-                            With over 8 years of experience in digital marketing, John leads our team with vision and expertise in strategic planning and business development.
+                            Digital marketing expert with extensive experience in SEO, social media marketing, and content strategy. Passionate about driving results through innovative digital solutions.
                         </p>
                         <div class="team-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                            
                         </div>
                     </div>
                     
                     <!-- Team Member 2 -->
                     <div class="team-card">
-                        <div class="team-member-image">
-                            SM
+                        <div class="team-member-image-container">
+                            <img src="./Our-Projects/binu_white.jpg" alt="Binu Raj E" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="team-member-initials" style="display: none;">BR</div>
                         </div>
-                        <h3 class="team-member-name">Sarah Miller</h3>
-                        <p class="team-member-role">Digital Marketing Manager</p>
+                        <h3 class="team-member-name">Binu Raj E</h3>
+                        <p class="team-member-role">Web Developer</p>
                         <p class="team-member-description">
-                            Sarah specializes in SEO and content marketing strategies. She has helped numerous clients achieve top rankings and increased organic traffic.
+                            Full-stack web developer specializing in modern web technologies. Creates responsive, user-friendly websites that deliver exceptional user experiences and drive business growth.
                         </p>
                         <div class="team-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                           
                         </div>
                     </div>
                     
                     <!-- Team Member 3 -->
                     <div class="team-card">
-                        <div class="team-member-image">
-                            MJ
+                        <div class="team-member-image-container">
+                            <img src="./Our-Projects/rajesh.jpg" alt="Binu Raj E" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="team-member-initials" style="display: none;">BR</div>
+
                         </div>
-                        <h3 class="team-member-name">Mike Johnson</h3>
-                        <p class="team-member-role">Social Media Specialist</p>
+                        <h3 class="team-member-name">Rajesh</h3>
+                        <p class="team-member-role">AI Developer</p>
                         <p class="team-member-description">
-                            Mike creates engaging social media campaigns that build brand awareness and drive customer engagement across all major platforms.
+                            AI and machine learning specialist focused on developing intelligent solutions that automate processes and enhance business efficiency through cutting-edge artificial intelligence.
                         </p>
                         <div class="team-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Member 4 -->
-                    <div class="team-card">
-                        <div class="team-member-image">
-                            ED
-                        </div>
-                        <h3 class="team-member-name">Emily Davis</h3>
-                        <p class="team-member-role">Email Marketing Expert</p>
-                        <p class="team-member-description">
-                            Emily designs and executes email marketing campaigns that deliver exceptional ROI and build lasting customer relationships.
-                        </p>
-                        <div class="team-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Member 5 -->
-                    <div class="team-card">
-                        <div class="team-member-image">
-                            AB
-                        </div>
-                        <h3 class="team-member-name">Alex Brown</h3>
-                        <p class="team-member-role">Analytics & Strategy</p>
-                        <p class="team-member-description">
-                            Alex analyzes campaign performance and develops data-driven strategies to optimize marketing efforts and maximize client success.
-                        </p>
-                        <div class="team-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Member 6 -->
-                    <div class="team-card">
-                        <div class="team-member-image">
-                            LW
-                        </div>
-                        <h3 class="team-member-name">Lisa Wilson</h3>
-                        <p class="team-member-role">Creative Director</p>
-                        <p class="team-member-description">
-                            Lisa leads our creative team, developing compelling visual content and brand identities that resonate with target audiences.
-                        </p>
-                        <div class="team-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                           
                         </div>
                     </div>
                 </div>
@@ -175,10 +289,7 @@
         <section class="team-cta">
             <div class="container-custom">
                 <div class="cta-content">
-                    <h2>Ready to Work With Our Team?</h2>
-                    <p>Let's discuss how we can help grow your business with our digital marketing expertise.</p>
-                    <button class="btn btn-primary" onclick="window.location.href='index.html#contact'">
-                        Get In Touch <i class="fas fa-arrow-right"></i>
+                    
                     </button>
                 </div>
             </div>
