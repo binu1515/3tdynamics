@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', function() {
-      mobileNav.classList.remove('active');
+      if (mobileNav) {
+        mobileNav.classList.remove('active');
+      }
     });
   });
   

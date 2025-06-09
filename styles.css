@@ -34,6 +34,66 @@ body {
 }
 
 
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.team-member-image {
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+     margin: 0 auto 1.5rem;
+     background: linear-gradient(135deg, #667eea, #764ba2);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 3rem;
+     color: white;
+     font-weight: bold;
+}
+
+.team-member-name {
+     font-size: 1.5rem;
+     font-weight: 600;
+     margin-bottom: 0.5rem;
+     color: #333;
+}
+
+.team-member-role {
+     color: #007bff;
+     font-weight: 500;
+     margin-bottom: 1rem;
+}
+
+.team-member-description {
+     color: #666;
+     line-height: 1.6;
+     margin-bottom: 1.5rem;
+}
+
+.team-social {
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+}
+
 .fa-whatsapp {
     font-size: 1.2em !important;
     margin-right: 8px;
