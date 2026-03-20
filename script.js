@@ -109,3 +109,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+/* ===============================
+   GALLERY SLIDER
+=============================== */
+
+let sliderIndex = 0;
+const slider = document.getElementById("slider");
+const badgeText = document.getElementById("badgeText");
+const badgeLabel = document.getElementById("badgeLabel");
+
+if (slider) {
+  const slides = slider.children;
+  const totalSlides = slides.length;
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${sliderIndex * 100}%)`;
+
+    // Update badge dynamically
+    const currentSlide = slides[sliderIndex];
+    if (currentSlide) {
+      badgeText.textContent = currentSlide.dataset.title;
+      badgeLabel.textContent = currentSlide.dataset.label;
+    }
+  }
+
+  window.slide = function(direction) {
+    sliderIndex += direction;
+
+    if (sliderIndex < 0) sliderIndex = totalSlides - 1;
+    if (sliderIndex >= totalSlides) sliderIndex = 0;
+
+    updateSlider();
+  };
+
+  // Auto slide
+  setInterval(() => {
+    sliderIndex++;
+    if (sliderIndex >= totalSlides) sliderIndex = 0;
+    updateSlider();
+  }, 3000);
+
+  // Initialize first slide
+  updateSlider();
+}

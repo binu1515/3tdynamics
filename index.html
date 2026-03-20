@@ -288,20 +288,26 @@
         </a>
       </div>
 
-      <!-- RIGHT: framed image + stat bar -->
-      <div class="gallery-teaser__right">
-
-        <div class="gallery-teaser__frame">
-          <!-- Replace src with your actual client meeting image -->
-          <img src="Our-Projects/Testimonial_fortune.webp" alt="Client strategy session at 3T Dynamics" />
-
-          <div class="gallery-teaser__badge">
-            <span class="gallery-teaser__badge-label">Strategy Session</span>
-            <span class="gallery-teaser__badge-text">Client Onboarding &amp; Planning</span>
-          </div>
+      <div class="gallery-teaser__frame">
+        <div class="slider" id="slider">
+          <img src="Our-Projects/pinnacle_academy_client.webp" 
+               data-title="Pinnacle Academy" 
+               data-label="Client Success" />
+        
+          <img src="Our-Projects/Testimonial_fortune.webp" 
+               data-title="Fortune Academy" 
+               data-label="Client Delivered" />
         </div>
-
-       
+      
+        <!-- Controls -->
+        <button class="slider-btn prev" onclick="slide(-1)">❮</button>
+        <button class="slider-btn next" onclick="slide(1)">❯</button>
+      
+        <div class="gallery-teaser__badge">
+          <span class="gallery-teaser__badge-label" id="badgeLabel">Client Success</span>          
+          <span class="gallery-teaser__badge-text" id="badgeText">Pinnacle Academy</span>
+        </div>
+      
       </div>
 
       <!-- Scroll hint -->
